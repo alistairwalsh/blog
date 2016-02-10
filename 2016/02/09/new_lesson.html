@@ -1,0 +1,56 @@
+<p>In general the Software Carpentry lessons are focussed on ‘How To’ and not why. I’ve come to think of this as the distinction between what we are teaching and what a computer science course teaches. In general we imagine our audience wanting to know how to do something with a programming language rather than wanting to understand how that is happening behind the scenes. 
+A quick example of this is memory addresses. When i assign a value to a vaiable and then assign another variable to the first, I am not creating a copy of the data, I am pointing another variable name to the same memory address.
+When I present this idea in a class, I don’t explain that - I show them what happens.</p>
+
+<p>```{python}</p>
+
+<p>a = [‘red’,’green’,’blue’,’yellow’]
+b = a
+print(a)
+print(b)</p>
+
+<p>```</p>
+
+<p><code>{python}
+a = ['red','green','blue','yellow']
+b = a
+a.append('purple') 
+print(a)
+print(b)
+</code></p>
+
+<p>And the way around that if that’s not what you want to happen is to explicitly create another list:</p>
+
+<p>```{python}
+a = [‘red’,’green’,’blue’,’yellow’]
+b = list(a)
+a.append(‘purple’) 
+print(a)
+print(b)</p>
+
+<p>```</p>
+
+<p>You’ll notice there is no talk of memory addresses or how memory is assigned. No mention of garbage collection when data is no longer referenced by anything. In fact no description of the underlying performance of the language.
+I am simply demonstrating what happens and bringing it to the learners attention.</p>
+
+<p>In a computer science focussed class this might be explained like this. the id( ) function in Python returns the memory address of an object. </p>
+
+<p>```{python}
+a = [‘red’,’green’,’blue’,’yellow’]</p>
+
+<h1 id="this-creates-a-second-pointer-to-the-same-memory-address">This creates a second pointer to the same memory address</h1>
+<p>b = a</p>
+
+<p>print(id(a))
+print(id(b))</p>
+
+<p>print(id(a)==id(b))</p>
+
+<h1 id="this-creates-a-copy-of-a-at-a-new-memory-address">This creates a copy of a at a new memory address</h1>
+<p>b = list(a)</p>
+
+<p>print(id(a))
+print(id(b))
+print(id(a)==id(b))
+```</p>
+

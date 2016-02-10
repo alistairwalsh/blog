@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Feb 2016 14:32:43 +1100</pubDate>
-    <lastBuildDate>Wed, 10 Feb 2016 14:32:43 +1100</lastBuildDate>
+    <pubDate>Wed, 10 Feb 2016 14:43:16 +1100</pubDate>
+    <lastBuildDate>Wed, 10 Feb 2016 14:43:16 +1100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -27,6 +27,191 @@
         <category>jekyll</category>
         
         <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>How to, not Why</title>
+        <description>&lt;p&gt;In general the Software Carpentry lessons are focussed on ‘How To’ and not why. I’ve come to think of this as the distinction between what we are teaching and what a computer science course teaches. In general we imagine our audience wanting to know how to do something with a programming language rather than wanting to understand how that is happening behind the scenes. 
+A quick example of this is memory addresses. When i assign a value to a vaiable and then assign another variable to the first, I am not creating a copy of the data, I am pointing another variable name to the same memory address.
+When I present this idea in a class, I don’t explain that - I show them what happens.&lt;/p&gt;
+
+&lt;p&gt;```{python}&lt;/p&gt;
+
+&lt;p&gt;a = [‘red’,’green’,’blue’,’yellow’]
+b = a
+print(a)
+print(b)&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;{python}
+a = [&#39;red&#39;,&#39;green&#39;,&#39;blue&#39;,&#39;yellow&#39;]
+b = a
+a.append(&#39;purple&#39;) 
+print(a)
+print(b)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And the way around that if that’s not what you want to happen is to explicitly create another list:&lt;/p&gt;
+
+&lt;p&gt;```{python}
+a = [‘red’,’green’,’blue’,’yellow’]
+b = list(a)
+a.append(‘purple’) 
+print(a)
+print(b)&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;You’ll notice there is no talk of memory addresses or how memory is assigned. No mention of garbage collection when data is no longer referenced by anything. In fact no description of the underlying performance of the language.
+I am simply demonstrating what happens and bringing it to the learners attention.&lt;/p&gt;
+
+&lt;p&gt;In a computer science focussed class this might be explained like this. the id( ) function in Python returns the memory address of an object. &lt;/p&gt;
+
+&lt;p&gt;```{python}
+a = [‘red’,’green’,’blue’,’yellow’]&lt;/p&gt;
+
+&lt;h1 id=&quot;this-creates-a-second-pointer-to-the-same-memory-address&quot;&gt;This creates a second pointer to the same memory address&lt;/h1&gt;
+&lt;p&gt;b = a&lt;/p&gt;
+
+&lt;p&gt;print(id(a))
+print(id(b))&lt;/p&gt;
+
+&lt;p&gt;print(id(a)==id(b))&lt;/p&gt;
+
+&lt;h1 id=&quot;this-creates-a-copy-of-a-at-a-new-memory-address&quot;&gt;This creates a copy of a at a new memory address&lt;/h1&gt;
+&lt;p&gt;b = list(a)&lt;/p&gt;
+
+&lt;p&gt;print(id(a))
+print(id(b))
+print(id(a)==id(b))
+```&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 09 Feb 2016 00:00:00 +1100</pubDate>
+        <link>http://yourdomain.com/2016/02/09/new_lesson.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/2016/02/09/new_lesson.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>My First Post</title>
+        <description>&lt;h2 id=&quot;things-to-do-now-resbaz-is-over&quot;&gt;Things to do now Resbaz is over&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Machine Learning course&lt;/li&gt;
+  &lt;li&gt;Virtual reality development&lt;/li&gt;
+  &lt;li&gt;Intermediate Python lessons&lt;/li&gt;
+  &lt;li&gt;Assess level of applicants via survey or challenge&lt;/li&gt;
+  &lt;li&gt;Pandas Lesson&lt;/li&gt;
+  &lt;li&gt;Numpy Lesson&lt;/li&gt;
+  &lt;li&gt;Flask Lesson&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 03 Feb 2016 00:00:00 +1100</pubDate>
+        <link>http://yourdomain.com/2016/02/03/my-first-post.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/2016/02/03/my-first-post.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Blog</title>
+        <description>
+&lt;hr /&gt;
+&lt;p&gt;published: true
+title: SQLweek
+layout: post
+—&lt;/p&gt;
+
+&lt;p&gt;It will be SQL week here at NeuralCode. If you are a database ninja please share your dbfu. If you’re a noob like the rest of us, join in and we’ll work this out together.
+Databases are neat and cool! Cool because they run lots of data really fast without suffering the sluggish performance of spreadsheets and Neat because fields can be defined very precisely and strictly to maintain data accuracy. A database can have many tables that relate to one another and store relevant information together, that is still available to other tables and to SQL queries. Databases can also store much more than text and numeric data. Images, video, audio, whole documents, and references, can all be stored along with the information about them. It is this feature that i really appealing when you are handling lots of complex data related to an experiment. It might just keep your information organised in a manner that will make it useful to others and still useful to you in five years time.
+Databases will save you when that excel file starts to slow down (each scroll down takes a few seconds) or is so complicated that no-one can remember what parts of the 15 sheets is involved in calculating the values for the 16th.
+Phil has some databases of word frequency from different sources. They are already sluggish (150,000 entries on the one excel file we were playing with on friday). There is some redundancy and even a little error. The aim is to combine all the information into a database and extract the information relevant to the word list Phil will use in his upcoming experiment.&lt;/p&gt;
+
+&lt;p&gt;If you are using a mac - open a terminal window and type&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sqlite3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;you will start sqlite3 on the command line. We will progress toward using sqlite3 from within the ipython notebook but now it might be easier to understand in this simple format.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;There are two types of commands I’m going to show you. Some start with a&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;like&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;.help
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;this is how you can give instructions to the database engine, the rest of the commands are in the SQL language and that is how we create and query the information in our database.&lt;/p&gt;
+
+&lt;p&gt;Right now, if you are at the sqlite prompt, you can prettify the output by entering the following&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  &amp;gt;.headers on
+  &amp;gt;.mode columns
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will cause the output to include headers and align the output in columns. Much nicer and easier to read.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The SQL CREATE TABLE Statement&lt;/p&gt;
+
+&lt;p&gt;The CREATE TABLE statement is used to create a table in a database.&lt;/p&gt;
+
+&lt;p&gt;Tables are organized into rows and columns; and each table must have a name.&lt;/p&gt;
+
+&lt;h3 id=&quot;sql-create-table-syntax&quot;&gt;SQL CREATE TABLE Syntax&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;CREATE TABLE table_name
+
+&amp;gt;(
+
+&amp;gt;column_name1 data_type(size),
+
+&amp;gt;column_name2 data_type(size),
+
+&amp;gt;column_name3 data_type(size),
+
+&amp;gt;....
+
+&amp;gt;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How to write output of an SQL query to a csv&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;sqlite&amp;gt; .mode csv
+  
+&amp;gt;sqlite&amp;gt; .separator ,
+
+&amp;gt;sqlite&amp;gt; .output test_file_1.csv
+
+&amp;gt;sqlite&amp;gt; select * from tbl2;
+
+&amp;gt;sqlite&amp;gt; .exit
+
+&amp;gt;Psycholinguistic_databases Wintermute$ cat test_file_1.csv
+
+&amp;gt;id,word
+
+&amp;gt;0,aaron
+
+&amp;gt;1,aargh
+
+&amp;gt;Psycholinguistic_databases Wintermute$
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+        <pubDate>Thu, 01 Oct 2015 00:00:00 +1000</pubDate>
+        <link>http://yourdomain.com/2015/10/01/blog.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/2015/10/01/blog.html</guid>
+        
         
       </item>
     
